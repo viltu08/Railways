@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continuous Horizontal Scroll</title>
+    <title>Railways</title>
     <style>
-        /* Basic styling */
-        body, html {
+        /* Reset margin and padding */
+        * {
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        /* Basic body and html setup */
+        html, body {
+            height: 100%;
+            overflow-x: hidden; /* Prevent vertical scrolling */
             font-family: Arial, sans-serif;
         }
 
-        /* Container for horizontal scroll */
+        /* Scrollable container */
         .scroll-container {
             display: flex;
             flex-direction: row;
+            width: 400vw; /* 4 times the viewport width for horizontal scrolling */
             height: 100vh;
-            width: 500vw; /* The total width to accommodate multiple sections */
-            scroll-behavior: smooth; /* Smooth scrolling */
-            overflow-x: auto; /* Enable horizontal scrolling */
-            scrollbar-width: thin; /* For Firefox, to show thin scrollbar */
+            overflow-x: scroll; /* Enable horizontal scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling effect */
         }
 
-        /* Sections for each content block */
+        /* Each section takes full viewport width */
         .scroll-section {
-            flex: 0 0 100vw; /* Each section takes full viewport width */
+            flex: 0 0 100vw; /* Each section takes 100% of the viewport width */
             height: 100vh;
             display: flex;
             align-items: center;
@@ -35,50 +40,42 @@
             color: white;
         }
 
-        /* Background colors for visual distinction */
+        /* Different background colors for each section */
         #section1 {
-            background-color: #002D62; /* One of your palette colors */
+            background-color: #002D62; /* Palette color */
         }
 
         #section2 {
-            background-color: #6495ED; /* One of your palette colors */
+            background-color: #6495ED; /* Palette color */
         }
 
         #section3 {
-            background-color: #7CB9E8; /* One of your palette colors */
+            background-color: #7CB9E8; /* Palette color */
         }
 
         #section4 {
-            background-color: #FF6347; /* Example additional color */
+            background-color: #FF6347; /* Another background color */
         }
 
-        #section5 {
-            background-color: #32CD32; /* Example additional color */
+        /* Optional scrollbar styling */
+        .scroll-container::-webkit-scrollbar {
+            height: 8px; /* Height of the horizontal scrollbar */
         }
 
-        /* Optional styling for the scrollbar */
-        ::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        ::-webkit-scrollbar-thumb {
+        .scroll-container::-webkit-scrollbar-thumb {
             background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Scrollable container with multiple sections -->
     <div class="scroll-container">
         <div class="scroll-section" id="section1">Section 1</div>
         <div class="scroll-section" id="section2">Section 2</div>
         <div class="scroll-section" id="section3">Section 3</div>
         <div class="scroll-section" id="section4">Section 4</div>
-        <div class="scroll-section" id="section5">Section 5</div>
     </div>
 
 </body>
