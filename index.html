@@ -3,79 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Railways</title>
+    <title>Indian Railways</title>
     <style>
-        /* Reset margin and padding */
+        /* Reset default margin and padding */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Basic body and html setup */
-        html, body {
+        /* Basic styling for body */
+        body, html {
             height: 100%;
-            overflow-x: hidden; /* Prevent vertical scrolling */
+            overflow-x: hidden; /* Prevent horizontal scroll on body */
             font-family: Arial, sans-serif;
         }
 
-        /* Scrollable container */
+        /* Smooth scrolling behavior */
         .scroll-container {
             display: flex;
-            flex-direction: row;
-            width: 400vw; /* 4 times the viewport width for horizontal scrolling */
-            height: 100vh;
-            overflow-x: scroll; /* Enable horizontal scrolling */
-            scroll-behavior: smooth; /* Smooth scrolling effect */
+            overflow-x: scroll;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+            width: 100vw; /* Full width of viewport */
+            height: 100vh; /* Full height of viewport */
         }
 
-        /* Each section takes full viewport width */
-        .scroll-section {
-            flex: 0 0 100vw; /* Each section takes 100% of the viewport width */
+        /* Flexbox for horizontal layout */
+        .scroll-container > section {
+            min-width: 100vw; /* Each section takes full width of viewport */
             height: 100vh;
-            display: flex;
+            display: grid; /* Grid for organizing content */
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            color: white;
+            font-size: 2rem;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: white;
         }
 
-        /* Different background colors for each section */
-        #section1 {
-            background-color: #002D62; /* Palette color */
-        }
-
-        #section2 {
-            background-color: #6495ED; /* Palette color */
-        }
-
-        #section3 {
-            background-color: #7CB9E8; /* Palette color */
-        }
-
-        #section4 {
-            background-color: #FF6347; /* Another background color */
-        }
-
-        /* Optional scrollbar styling */
+        /* Scrollbar custom styling */
         .scroll-container::-webkit-scrollbar {
-            height: 8px; /* Height of the horizontal scrollbar */
+            height: 10px;
         }
 
         .scroll-container::-webkit-scrollbar-thumb {
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
         }
+
+        /* Sections with colors inspired by Indian Railways */
+        #section1 { background-color: #003366; } /* Dark blue */
+        #section2 { background-color: #E25822; } /* Brick red */
+        #section3 { background-color: #FFD700; } /* Signal yellow */
+        #section4 { background-color: #228B22; } /* Signal green */
+        #section5 { background-color: #8B4513; } /* Earthy brown */
+        #section6 { background-color: #CD5C5C; } /* Train red */
+        #section7 { background-color: #4682B4; } /* Station blue */
+        #section8 { background-color: #DAA520; } /* Golden accents */
+        #section9 { background-color: #2F4F4F; } /* Dark exterior */
+        #section10 { background-color: #FFA500; } /* Orange accents */
     </style>
 </head>
 <body>
 
-    <!-- Scrollable container with multiple sections -->
+    <!-- Horizontal scrollable container -->
     <div class="scroll-container">
-        <div class="scroll-section" id="section1">Section 1</div>
-        <div class="scroll-section" id="section2">Section 2</div>
-        <div class="scroll-section" id="section3">Section 3</div>
-        <div class="scroll-section" id="section4">Section 4</div>
+        <!-- Sections inside the scroll container -->
+        <section id="section1">
+            <div>Section 1</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
+        <section id="section2">
+            <div>Section 2</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
+        <section id="section3">
+            <div>Section 3</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
+        <section id="section4">
+            <div>Section 4</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
+        <section id="section5">
+            <div>Section 5</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
+        <section id="section6">
+            <div>Section 6</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
+        <section id="section7">
+            <div>Section 7</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
+        <section id="section8">
+            <div>Section 8</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
+        <section id="section9">
+            <div>Section 9</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
+        <section id="section10">
+            <div>Section 10</div>
+            <div>Content A</div>
+            <div>Content B</div>
+            <div>Content C</div>
+        </section>
     </div>
 
 </body>
